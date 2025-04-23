@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-
 const mockPocs = [{
   name: "Riteway Scheduling Bot",
   description: "AI-powered scheduling assistant for streamlined appointments.",
@@ -106,8 +105,7 @@ const mockPocs = [{
   img: "/lovable-uploads/3e1a77e5-8243-4f54-9bb1-61287a7e3cea.png",
   link: "https://oil-qulity.aiusecase.benchmarkit.solutions/"
 }];
-
-const PocList = () => <main className="w-full min-h-screen pt-36 pb-16 bg-transparent">
+const PocList = () => <main className="w-full min-h-screen pt-36 pb-16 bg-white">
     <div className="flex flex-col items-center mb-10">
       <span className="text-[#1e2040] text-sm font-semibold mb-2 tracking-widest uppercase font-inter">
         Our Complete Suite of Generative AI Solutions
@@ -149,5 +147,4 @@ const PocList = () => <main className="w-full min-h-screen pt-36 pb-16 bg-transp
         </div>)}
     </div>
   </main>;
-
 export default PocList;
