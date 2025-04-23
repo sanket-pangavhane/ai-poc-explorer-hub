@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+
 const mockPocs = [{
   name: "Riteway Scheduling Bot",
   description: "AI-powered scheduling assistant for streamlined appointments.",
@@ -105,8 +106,8 @@ const mockPocs = [{
   img: "/lovable-uploads/3e1a77e5-8243-4f54-9bb1-61287a7e3cea.png",
   link: "https://oil-qulity.aiusecase.benchmarkit.solutions/"
 }];
+
 const PocList = () => <main className="w-full min-h-screen pt-36 pb-16 bg-transparent">
-    {/* Headings */}
     <div className="flex flex-col items-center mb-10">
       <span className="text-[#1e2040] text-sm font-semibold mb-2 tracking-widest uppercase font-inter">
         Our Complete Suite of Generative AI Solutions
@@ -120,25 +121,21 @@ const PocList = () => <main className="w-full min-h-screen pt-36 pb-16 bg-transp
         ensuring seamless integration and meaningful results for your business.
       </div>
     </div>
-    {/* Cards Grid: 3 columns, 4+ rows (auto layout for all POCs) */}
     <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 px-4 md:px-10 lg:px-24 mx-auto max-w-7xl">
       {mockPocs.map((poc, idx) => <div key={poc.name} style={{
       minHeight: 320,
-      borderRadius: 28
+      borderRadius: 28,
+      backgroundColor: 'rgba(243, 252, 255, 1)'
     }} className="flex flex-col items-center bg-white rounded-3xl shadow-[0_6px_32px_0_rgba(243, 252, 255, 1)] px-6 py-10 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300">
-          {/* Icon/Image */}
           <div className="mb-5 flex items-center justify-center">
             <img src={poc.img} alt="POC Icon" className="h-20 w-20 object-contain" draggable={false} />
           </div>
-          {/* Name */}
           <div className="text-lg md:text-xl font-bold text-[#1e2040] text-center mb-1 font-playfair">
             {poc.name}
           </div>
-          {/* Description */}
           <div className="text-md text-center text-[#333344] mb-6 font-inter max-w-xs">
             {poc.description}
           </div>
-          {/* Visit Button (modern style) */}
           <a href={poc.link} target="_blank" rel="noopener noreferrer" className="group relative flex items-center gap-2 px-7 py-2 rounded-full font-bold font-inter bg-gradient-to-br from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 shadow-lg border-none active:scale-95 
                         transition-all duration-200 text-[#1e2040] text-base outline-none focus-visible:ring-2 focus-visible:ring-yellow-400" style={{
         minWidth: 122,
@@ -152,4 +149,5 @@ const PocList = () => <main className="w-full min-h-screen pt-36 pb-16 bg-transp
         </div>)}
     </div>
   </main>;
+
 export default PocList;
