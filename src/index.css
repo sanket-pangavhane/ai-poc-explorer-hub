@@ -1,8 +1,4 @@
 
-@import "@fontsource/archivo/400.css";
-@import "@fontsource/archivo/500.css";
-@import "@fontsource/archivo/600.css";
-@import "@fontsource/archivo/700.css";
 @import "@fontsource/poppins/400.css";
 @import "@fontsource/poppins/500.css";
 @import "@fontsource/poppins/600.css";
@@ -12,15 +8,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom button styles for .btn and .btn-primary */
-.btn {
-  border-radius: 60px !important;
+/* Custom button styles for .btn-yellow */
+.btn-yellow {
+  border-radius: 60px;
   align-items: center;
   justify-content: center;
   gap: 12px;
   position: relative;
   display: inline-flex;
-  font-family: 'Poppins', var(--poppins), sans-serif !important;
+  font-family: 'Poppins', var(--poppins), sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -28,40 +24,40 @@
   padding: 10px 30px;
   cursor: pointer;
   border: none;
-  transition: all 1s;
+  background: #fff;
+  color: #201842;
+  box-shadow: 0 2px 14px 0 rgba(243,252,255,0.37);
+  transition: background 0.6s cubic-bezier(.41,1.13,1,.99), color 0.6s cubic-bezier(.41,1.13,1,.99);
+}
+.btn-yellow:hover,
+.btn-yellow:focus,
+.btn-yellow:active {
+  background: #ffc300 !important;
+  color: #201842;
+  /* keep transition smooth */
 }
 
-.btn-primary {
-  --darkgray: #212338;
-  --white: #fff;
-
-  color: var(--darkgray) !important;
-  background: var(--white) !important;
-  border: 2px solid var(--white) !important;
-  box-shadow: 0 2px 14px 0 rgba(243, 252, 255, 0.37) !important;
+/* Card style for blue card */
+.poc-card {
+  background: #f4fbff !important;
+  border-radius: 24px !important;
+  box-shadow: 0 3px 24px 0 rgba(99,151,201,0.09) !important;
+  border: 1.5px solid #e7f5fa !important;
+  transition: box-shadow .25s, transform .25s !important;
 }
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-  background: var(--white) !important;
-  color: var(--darkgray) !important;
-  border: 2px solid var(--white) !important;
-  box-shadow: 0 6px 32px 0 rgba(243, 252, 255, 1) !important;
+.poc-card:hover {
+  box-shadow: 0 6px 32px 0 #daecfa;
+  transform: translateY(-3px) scale(1.01);
 }
 
 /* Make the body use archivo font as default */
 @layer base {
   html {
-    font-family: 'Archivo', var(--archivo), Arial, Helvetica, sans-serif;
+    font-family: 'Archivo', Arial, Helvetica, sans-serif;
   }
   body {
     @apply bg-background text-foreground font-archivo;
   }
-}
-
-/* Make cards' background */
-.poc-card {
-  background: rgba(243, 252, 255, 1) !important;
 }
 
 /* Footer */
