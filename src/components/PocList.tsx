@@ -65,28 +65,31 @@ const mockPocs = [
 ];
 
 const PocList = () => (
-  <main className="w-full min-h-screen pt-36 pb-16 bg-[#F6F6F7]">
+  <main className="w-full min-h-screen pt-36 pb-16 bg-transparent">
     {/* Headings */}
-    <div className="flex flex-col items-center mb-12">
-      <span className="text-[#1e2040] text-base font-semibold mb-2 tracking-wide" style={{ letterSpacing: 1.5 }}>
-        OUR COMPLETE SUITE OF GENERATIVE AI SOLUTIONS
+    <div className="flex flex-col items-center mb-10">
+      <span className="text-[#1e2040] text-sm font-semibold mb-2 tracking-widest uppercase font-inter">
+        Our Complete Suite of Generative AI Solutions
       </span>
-      <h2 className="text-4xl md:text-5xl font-bold text-[#1A1F2C] mb-4 text-center" style={{ fontFamily: "inherit", letterSpacing: ".5px" }}>
+      <h2 className="text-4xl md:text-5xl font-bold text-[#1A1F2C] mb-3 text-center font-playfair">
         Our complete suite of Generative AI solutions
       </h2>
-      <div className="text-lg md:text-xl font-normal text-[#212338] text-center max-w-2xl">
+      <div className="text-lg md:text-xl font-normal text-[#212338] text-center max-w-2xl font-inter">
         Our Generative AI services cover every phase of development,
         <br className="hidden sm:block" />
         ensuring seamless integration and meaningful results for your business.
       </div>
     </div>
-    {/* Cards Grid */}
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9 px-2 md:px-16 mx-auto">
+    {/* Cards Grid: 3 columns, 4 rows */}
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 px-4 md:px-10 lg:px-24 mx-auto max-w-7xl">
       {mockPocs.map((poc, idx) => (
         <div
           key={poc.name}
-          className="flex flex-col items-center bg-[#f5fbff] rounded-2xl shadow-[0_3px_24px_0_rgba(80,90,180,0.07)] px-7 py-12 border border-transparent hover:shadow-lg transition-transform hover:scale-[1.025] duration-300"
-          style={{ minHeight: 340, borderRadius: 24 }}
+          className="flex flex-col items-center bg-white rounded-3xl shadow-[0_6px_32px_0_rgba(80,90,180,0.07)] px-6 py-10 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
+          style={{
+            minHeight: 320,
+            borderRadius: 28,
+          }}
         >
           {/* Icon/Image */}
           <div className="mb-5 flex items-center justify-center">
@@ -98,51 +101,26 @@ const PocList = () => (
             />
           </div>
           {/* Name */}
-          <div className="text-xl md:text-2xl font-bold text-[#1e2040] text-center mb-2" style={{ fontFamily: "inherit" }}>
+          <div className="text-lg md:text-xl font-bold text-[#1e2040] text-center mb-1 font-playfair">
             {poc.name}
           </div>
           {/* Description */}
-          <div className="text-md text-center text-[#333344] mb-7 font-normal max-w-xs">
+          <div className="text-md text-center text-[#333344] mb-6 font-inter max-w-xs">
             {poc.description}
           </div>
-          {/* Visit Button (styled like contact us) */}
+          {/* Visit Button (modern style) */}
           <button
             type="button"
-            className="group flex items-center gap-2 px-7 py-2 rounded-full bg-white hover:bg-yellow-400 border-2 border-yellow-400 transition-colors duration-400 outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 shadow"
+            className="group relative flex items-center gap-2 px-7 py-2 rounded-full font-bold font-inter bg-gradient-to-br from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 shadow-lg border-none active:scale-95 
+                        transition-all duration-200 text-[#1e2040] text-base outline-none focus-visible:ring-2 focus-visible:ring-yellow-400"
             style={{
-              fontWeight: 600,
-              fontFamily: "inherit",
-              fontSize: 16,
-              color: "#1e2040",
-              minWidth: 110,
-              transition: "background 0.5s linear"
+              minWidth: 122,
+              letterSpacing: 0.02,
             }}
           >
-            <span className="relative z-10 font-semibold transition-colors">Visit</span>
-            <span className="relative z-10 flex items-center justify-center ml-1">
-              <span
-                className="flex items-center justify-center rounded-full"
-                style={{
-                  backgroundColor: "#fde047",
-                  border: "2.2px solid #1e2040",
-                  boxShadow: "0px 0px 0px 3px #fde047",
-                  width: 30,
-                  height: 30,
-                  display: "flex"
-                }}
-              >
-                <ArrowRight
-                  size={18}
-                  color="#1e2040"
-                  strokeWidth={2.5}
-                  className="rounded-full"
-                  style={{
-                    background: "#1e2040",
-                    borderRadius: "9999px",
-                    padding: 2.5,
-                  }}
-                />
-              </span>
+            <span className="relative z-10 font-semibold flex items-center">
+              Visit
+              <ArrowRight size={19} className="ml-1 transition-transform group-hover:translate-x-0.5" color="#1e2040" strokeWidth={2.3} />
             </span>
           </button>
         </div>
